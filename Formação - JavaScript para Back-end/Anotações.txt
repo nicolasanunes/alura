@@ -1,0 +1,51 @@
+Tipos de dados primitivos:
+    number, string, boolean.
+
+Variáveis:
+    var:  não utilizado atualmente.
+    let: atribuido a variáveis que precisão ser alteradas no código.
+    const: atribuído a variáveis que não serão alteradas no código.
+
+Operadores de comparação:
+    == compara só o valor.
+    === compara o valor e o tipo.
+    
+Conversão de dados:
+    Implícita: o próprio JS altera o valor da variável number para o tipo String ao utilizar os operadores.
+    Explícita: o programar utiliza as funções nativas do JS (Number() e String()) para converter o tipo da variável.
+
+Operador ternário:
+    if: console.log(varX >= varY ? "respVerdadeira" : "respFalsa");
+
+Template String:
+    ${variável}
+
+Função:
+    function nomeDaFuncao(param) {
+        // bloco de código
+    }
+
+    nomeDaFuncao(param);
+
+Expressão de função:
+    const soma = function(num1, num2) {return num1 + num2}
+    console.log(soma(1, 2))
+    // nesse caso, a chamada da função precisa necessariamente estar após a criação da função.
+
+Arrow function:
+    const soma = (num1, num2) => num1 + num2;
+    
+    // para arrow functions com mais de 1 linha
+    const somaNumerosPequenos = (num1, num2) => {
+        if(num1 > 10 || num2 > 10) {
+            return "Somente números de 1 a 9.";       
+        } else {
+            num1 + num2;
+        }   
+    }
+
+Ordenar uma lista em JS:
+    lista.sort((a, b) => a - b); // [1, 5, 8, 9, 10, 12, 15]
+
+Processar um array e retornar um novo array:
+    arrArray.map(objeto) => Object.values(objeto) // retorna apenas os values

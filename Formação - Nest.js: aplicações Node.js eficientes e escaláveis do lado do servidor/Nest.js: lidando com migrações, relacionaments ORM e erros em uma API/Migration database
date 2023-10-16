@@ -1,0 +1,28 @@
+npm install // para baixar as dependências (package.json) do projeto obtido pelo GitHub
+
+Criar arquivo .env // arquivo oculto e por isto não é importado pelo GitHub. Esqueleto:
+
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_USERNAME=root
+DB_PASSWORD=root
+DB_NAME=db_loja
+DB_ADMIN_EMAIL=admin@root.com
+
+* Verificar no arquivo docker-compose.yaml se as variáveis estão corretas
+
+docker-compose up -d // cria no Postgre as dependências do projeto
+Adicionar servidor no PgAdmin (name: postgres)
+Criar banco de dados (db_shop)
+
+sudo npm i -g typeorm@0.3.16 // instalar o CLI para migração do banco de dados
+npm i dotenv@16.0.3 // instalar o dotenv para integrar o data-source-cli.ts com o arquivo .env
+
+Adicionar o seguinte Script no package.json:
+"typeorm": "typeorm-ts-node-esm --dataSource src/db/data-source-cli.ts" 
+
+npm run migration:show // mostra as migrações existentes no código
+npm run migration:generate src/db/migrations/create-tables // cria o arquivo e migração
+npm run migration:run // gera as tabelas no banco de dados
+npm run typeorm migration:revert // reverte a última migração
+

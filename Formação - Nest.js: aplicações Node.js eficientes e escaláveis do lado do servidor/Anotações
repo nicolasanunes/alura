@@ -1,0 +1,5 @@
+nest new project-name // para criar um novo projeto
+nest g resource // cria um CRUD automático
+npm install @nestjs/typeorm typeorm // instala o TypeORM no projeto
+npm install @nestjs/config // esconder as variáveis no .env
+npm install pg // instalar as dependências do postgres no projeto
